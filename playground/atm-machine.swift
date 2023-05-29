@@ -26,6 +26,8 @@ var bills = [Bill(name: "Meralco"), Bill(name: "Maynilad")]
 var account = AtmAccount(name: "Reginald Trey Tolentino", pin: "1234", balance: 30000.00)
 var mainMenu = MainMenuState(choice: 0, shouldRelogin: false)
 
+
+
 func login() -> Bool {
 
     var incorrectPinCount = 0

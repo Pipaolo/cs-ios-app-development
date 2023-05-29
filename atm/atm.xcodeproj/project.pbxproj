@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		552EE02E2A24CC7E00589C7A /* atmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE02D2A24CC7E00589C7A /* atmApp.swift */; };
+		552EE0302A24CC7E00589C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE02F2A24CC7E00589C7A /* ContentView.swift */; };
+		552EE0322A24CC7E00589C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552EE0312A24CC7E00589C7A /* Assets.xcassets */; };
+		552EE0362A24CC7E00589C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552EE0352A24CC7E00589C7A /* Preview Assets.xcassets */; };
+		552EE0402A24CC7E00589C7A /* atmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE03F2A24CC7E00589C7A /* atmTests.swift */; };
+		552EE04A2A24CC7E00589C7A /* atmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0492A24CC7E00589C7A /* atmUITests.swift */; };
+		552EE04C2A24CC7E00589C7A /* atmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE04B2A24CC7E00589C7A /* atmUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		552EE03C2A24CC7E00589C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 552EE0222A24CC7E00589C7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 552EE0292A24CC7E00589C7A;
+			remoteInfo = atm;
+		};
+		552EE0462A24CC7E00589C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 552EE0222A24CC7E00589C7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 552EE0292A24CC7E00589C7A;
+			remoteInfo = atm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		552EE02A2A24CC7E00589C7A /* atm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = atm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		552EE02D2A24CC7E00589C7A /* atmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmApp.swift; sourceTree = "<group>"; };
+		552EE02F2A24CC7E00589C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		552EE0312A24CC7E00589C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		552EE0332A24CC7E00589C7A /* atm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = atm.entitlements; sourceTree = "<group>"; };
+		552EE0352A24CC7E00589C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		552EE03B2A24CC7E00589C7A /* atmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = atmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		552EE03F2A24CC7E00589C7A /* atmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmTests.swift; sourceTree = "<group>"; };
+		552EE0452A24CC7E00589C7A /* atmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = atmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		552EE0492A24CC7E00589C7A /* atmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmUITests.swift; sourceTree = "<group>"; };
+		552EE04B2A24CC7E00589C7A /* atmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		552EE0272A24CC7E00589C7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0382A24CC7E00589C7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0422A24CC7E00589C7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		552EE0212A24CC7E00589C7A = {
+			isa = PBXGroup;
+			children = (
+				552EE02C2A24CC7E00589C7A /* atm */,
+				552EE03E2A24CC7E00589C7A /* atmTests */,
+				552EE0482A24CC7E00589C7A /* atmUITests */,
+				552EE02B2A24CC7E00589C7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		552EE02B2A24CC7E00589C7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				552EE02A2A24CC7E00589C7A /* atm.app */,
+				552EE03B2A24CC7E00589C7A /* atmTests.xctest */,
+				552EE0452A24CC7E00589C7A /* atmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		552EE02C2A24CC7E00589C7A /* atm */ = {
+			isa = PBXGroup;
+			children = (
+				552EE02D2A24CC7E00589C7A /* atmApp.swift */,
+				552EE02F2A24CC7E00589C7A /* ContentView.swift */,
+				552EE0312A24CC7E00589C7A /* Assets.xcassets */,
+				552EE0332A24CC7E00589C7A /* atm.entitlements */,
+				552EE0342A24CC7E00589C7A /* Preview Content */,
+			);
+			path = atm;
+			sourceTree = "<group>";
+		};
+		552EE0342A24CC7E00589C7A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				552EE0352A24CC7E00589C7A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		552EE03E2A24CC7E00589C7A /* atmTests */ = {
+			isa = PBXGroup;
+			children = (
+				552EE03F2A24CC7E00589C7A /* atmTests.swift */,
+			);
+			path = atmTests;
+			sourceTree = "<group>";
+		};
+		552EE0482A24CC7E00589C7A /* atmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				552EE0492A24CC7E00589C7A /* atmUITests.swift */,
+				552EE04B2A24CC7E00589C7A /* atmUITestsLaunchTests.swift */,
+			);
+			path = atmUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		552EE0292A24CC7E00589C7A /* atm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552EE04F2A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atm" */;
+			buildPhases = (
+				552EE0262A24CC7E00589C7A /* Sources */,
+				552EE0272A24CC7E00589C7A /* Frameworks */,
+				552EE0282A24CC7E00589C7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = atm;
+			productName = atm;
+			productReference = 552EE02A2A24CC7E00589C7A /* atm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		552EE03A2A24CC7E00589C7A /* atmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552EE0522A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atmTests" */;
+			buildPhases = (
+				552EE0372A24CC7E00589C7A /* Sources */,
+				552EE0382A24CC7E00589C7A /* Frameworks */,
+				552EE0392A24CC7E00589C7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				552EE03D2A24CC7E00589C7A /* PBXTargetDependency */,
+			);
+			name = atmTests;
+			productName = atmTests;
+			productReference = 552EE03B2A24CC7E00589C7A /* atmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		552EE0442A24CC7E00589C7A /* atmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552EE0552A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atmUITests" */;
+			buildPhases = (
+				552EE0412A24CC7E00589C7A /* Sources */,
+				552EE0422A24CC7E00589C7A /* Frameworks */,
+				552EE0432A24CC7E00589C7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				552EE0472A24CC7E00589C7A /* PBXTargetDependency */,
+			);
+			name = atmUITests;
+			productName = atmUITests;
+			productReference = 552EE0452A24CC7E00589C7A /* atmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		552EE0222A24CC7E00589C7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					552EE0292A24CC7E00589C7A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					552EE03A2A24CC7E00589C7A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 552EE0292A24CC7E00589C7A;
+					};
+					552EE0442A24CC7E00589C7A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 552EE0292A24CC7E00589C7A;
+					};
+				};
+			};
+			buildConfigurationList = 552EE0252A24CC7E00589C7A /* Build configuration list for PBXProject "atm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 552EE0212A24CC7E00589C7A;
+			productRefGroup = 552EE02B2A24CC7E00589C7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				552EE0292A24CC7E00589C7A /* atm */,
+				552EE03A2A24CC7E00589C7A /* atmTests */,
+				552EE0442A24CC7E00589C7A /* atmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		552EE0282A24CC7E00589C7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552EE0362A24CC7E00589C7A /* Preview Assets.xcassets in Resources */,
+				552EE0322A24CC7E00589C7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0392A24CC7E00589C7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0432A24CC7E00589C7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		552EE0262A24CC7E00589C7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552EE0302A24CC7E00589C7A /* ContentView.swift in Sources */,
+				552EE02E2A24CC7E00589C7A /* atmApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0372A24CC7E00589C7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552EE0402A24CC7E00589C7A /* atmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552EE0412A24CC7E00589C7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552EE04A2A24CC7E00589C7A /* atmUITests.swift in Sources */,
+				552EE04C2A24CC7E00589C7A /* atmUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		552EE03D2A24CC7E00589C7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 552EE0292A24CC7E00589C7A /* atm */;
+			targetProxy = 552EE03C2A24CC7E00589C7A /* PBXContainerItemProxy */;
+		};
+		552EE0472A24CC7E00589C7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 552EE0292A24CC7E00589C7A /* atm */;
+			targetProxy = 552EE0462A24CC7E00589C7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		552EE04D2A24CC7E00589C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		552EE04E2A24CC7E00589C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		552EE0502A24CC7E00589C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = atm/atm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"atm/Preview Content\"";
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		552EE0512A24CC7E00589C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = atm/atm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"atm/Preview Content\"";
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		552EE0532A24CC7E00589C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/atm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/atm";
+			};
+			name = Debug;
+		};
+		552EE0542A24CC7E00589C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/atm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/atm";
+			};
+			name = Release;
+		};
+		552EE0562A24CC7E00589C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = atm;
+			};
+			name = Debug;
+		};
+		552EE0572A24CC7E00589C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4FWMJQJWS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rly.bank.atmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = atm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		552EE0252A24CC7E00589C7A /* Build configuration list for PBXProject "atm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552EE04D2A24CC7E00589C7A /* Debug */,
+				552EE04E2A24CC7E00589C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552EE04F2A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552EE0502A24CC7E00589C7A /* Debug */,
+				552EE0512A24CC7E00589C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552EE0522A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552EE0532A24CC7E00589C7A /* Debug */,
+				552EE0542A24CC7E00589C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552EE0552A24CC7E00589C7A /* Build configuration list for PBXNativeTarget "atmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552EE0562A24CC7E00589C7A /* Debug */,
+				552EE0572A24CC7E00589C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 552EE0222A24CC7E00589C7A /* Project object */;
+}
