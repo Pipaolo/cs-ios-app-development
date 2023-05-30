@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552EE02E2A24CC7E00589C7A /* atmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE02D2A24CC7E00589C7A /* atmApp.swift */; };
-		552EE0302A24CC7E00589C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE02F2A24CC7E00589C7A /* ContentView.swift */; };
+		552EE02E2A24CC7E00589C7A /* AtmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE02D2A24CC7E00589C7A /* AtmApp.swift */; };
 		552EE0322A24CC7E00589C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552EE0312A24CC7E00589C7A /* Assets.xcassets */; };
 		552EE0362A24CC7E00589C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552EE0352A24CC7E00589C7A /* Preview Assets.xcassets */; };
 		552EE0402A24CC7E00589C7A /* atmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE03F2A24CC7E00589C7A /* atmTests.swift */; };
 		552EE04A2A24CC7E00589C7A /* atmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0492A24CC7E00589C7A /* atmUITests.swift */; };
 		552EE04C2A24CC7E00589C7A /* atmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE04B2A24CC7E00589C7A /* atmUITestsLaunchTests.swift */; };
+		552EE0592A24CC9300589C7A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0582A24CC9300589C7A /* LoginView.swift */; };
+		552EE05E2A24D31F00589C7A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 552EE05D2A24D31F00589C7A /* ComposableArchitecture */; };
+		552EE0612A24D33100589C7A /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 552EE0602A24D33100589C7A /* SwiftUINavigation */; };
+		552EE0632A24D33100589C7A /* _SwiftUINavigationState in Frameworks */ = {isa = PBXBuildFile; productRef = 552EE0622A24D33100589C7A /* _SwiftUINavigationState */; };
+		552EE0652A24E46B00589C7A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0642A24E46B00589C7A /* AppModel.swift */; };
+		552EE0672A24E9EE00589C7A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0662A24E9EE00589C7A /* MainMenu.swift */; };
+		552EE06A2A250E0100589C7A /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = 552EE0692A250E0100589C7A /* FlowStacks */; };
+		552EE06D2A25785800589C7A /* TCACoordinators in Frameworks */ = {isa = PBXBuildFile; productRef = 552EE06C2A25785800589C7A /* TCACoordinators */; };
+		552EE06F2A25786B00589C7A /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE06E2A25786B00589C7A /* AppScreen.swift */; };
+		552EE0712A257B4B00589C7A /* AtmAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EE0702A257B4B00589C7A /* AtmAppCoordinator.swift */; };
+		556C1DE72A259E090028BD50 /* MainMenuBalanceInquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DE62A259E090028BD50 /* MainMenuBalanceInquiry.swift */; };
+		556C1DE92A259E900028BD50 /* MainMenuWithdraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DE82A259E900028BD50 /* MainMenuWithdraw.swift */; };
+		556C1DEB2A259EBD0028BD50 /* MainMenuTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DEA2A259EBD0028BD50 /* MainMenuTransfer.swift */; };
+		556C1DED2A259F020028BD50 /* MainMenuChangePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DEC2A259F020028BD50 /* MainMenuChangePin.swift */; };
+		556C1DEF2A259F1D0028BD50 /* MainMenuPayBills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DEE2A259F1D0028BD50 /* MainMenuPayBills.swift */; };
+		556C1DF12A259F460028BD50 /* MainMenuDeposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C1DF02A259F460028BD50 /* MainMenuDeposit.swift */; };
+		55D9B0132A25CD080025C099 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9B0122A25CD080025C099 /* AlertError.swift */; };
+		55D9B0152A25DB7A0025C099 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9B0142A25DB7A0025C099 /* Utils.swift */; };
+		55D9B0172A25E05A0025C099 /* MainMenuPayBillsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9B0162A25E05A0025C099 /* MainMenuPayBillsSelected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +53,7 @@
 
 /* Begin PBXFileReference section */
 		552EE02A2A24CC7E00589C7A /* atm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = atm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		552EE02D2A24CC7E00589C7A /* atmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmApp.swift; sourceTree = "<group>"; };
-		552EE02F2A24CC7E00589C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		552EE02D2A24CC7E00589C7A /* AtmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmApp.swift; sourceTree = "<group>"; };
 		552EE0312A24CC7E00589C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552EE0332A24CC7E00589C7A /* atm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = atm.entitlements; sourceTree = "<group>"; };
 		552EE0352A24CC7E00589C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +62,20 @@
 		552EE0452A24CC7E00589C7A /* atmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = atmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		552EE0492A24CC7E00589C7A /* atmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmUITests.swift; sourceTree = "<group>"; };
 		552EE04B2A24CC7E00589C7A /* atmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		552EE0582A24CC9300589C7A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		552EE0642A24E46B00589C7A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		552EE0662A24E9EE00589C7A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		552EE06E2A25786B00589C7A /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		552EE0702A257B4B00589C7A /* AtmAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmAppCoordinator.swift; sourceTree = "<group>"; };
+		556C1DE62A259E090028BD50 /* MainMenuBalanceInquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBalanceInquiry.swift; sourceTree = "<group>"; };
+		556C1DE82A259E900028BD50 /* MainMenuWithdraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuWithdraw.swift; sourceTree = "<group>"; };
+		556C1DEA2A259EBD0028BD50 /* MainMenuTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTransfer.swift; sourceTree = "<group>"; };
+		556C1DEC2A259F020028BD50 /* MainMenuChangePin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuChangePin.swift; sourceTree = "<group>"; };
+		556C1DEE2A259F1D0028BD50 /* MainMenuPayBills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuPayBills.swift; sourceTree = "<group>"; };
+		556C1DF02A259F460028BD50 /* MainMenuDeposit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuDeposit.swift; sourceTree = "<group>"; };
+		55D9B0122A25CD080025C099 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		55D9B0142A25DB7A0025C099 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		55D9B0162A25E05A0025C099 /* MainMenuPayBillsSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuPayBillsSelected.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +83,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552EE0612A24D33100589C7A /* SwiftUINavigation in Frameworks */,
+				552EE0632A24D33100589C7A /* _SwiftUINavigationState in Frameworks */,
+				552EE05E2A24D31F00589C7A /* ComposableArchitecture in Frameworks */,
+				552EE06A2A250E0100589C7A /* FlowStacks in Frameworks */,
+				552EE06D2A25785800589C7A /* TCACoordinators in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +131,24 @@
 		552EE02C2A24CC7E00589C7A /* atm */ = {
 			isa = PBXGroup;
 			children = (
-				552EE02D2A24CC7E00589C7A /* atmApp.swift */,
-				552EE02F2A24CC7E00589C7A /* ContentView.swift */,
+				552EE02D2A24CC7E00589C7A /* AtmApp.swift */,
 				552EE0312A24CC7E00589C7A /* Assets.xcassets */,
 				552EE0332A24CC7E00589C7A /* atm.entitlements */,
 				552EE0342A24CC7E00589C7A /* Preview Content */,
+				552EE0582A24CC9300589C7A /* LoginView.swift */,
+				552EE0662A24E9EE00589C7A /* MainMenu.swift */,
+				552EE0642A24E46B00589C7A /* AppModel.swift */,
+				552EE06E2A25786B00589C7A /* AppScreen.swift */,
+				552EE0702A257B4B00589C7A /* AtmAppCoordinator.swift */,
+				556C1DE62A259E090028BD50 /* MainMenuBalanceInquiry.swift */,
+				556C1DE82A259E900028BD50 /* MainMenuWithdraw.swift */,
+				556C1DEA2A259EBD0028BD50 /* MainMenuTransfer.swift */,
+				556C1DEC2A259F020028BD50 /* MainMenuChangePin.swift */,
+				556C1DEE2A259F1D0028BD50 /* MainMenuPayBills.swift */,
+				55D9B0162A25E05A0025C099 /* MainMenuPayBillsSelected.swift */,
+				556C1DF02A259F460028BD50 /* MainMenuDeposit.swift */,
+				55D9B0122A25CD080025C099 /* AlertError.swift */,
+				55D9B0142A25DB7A0025C099 /* Utils.swift */,
 			);
 			path = atm;
 			sourceTree = "<group>";
@@ -145,6 +194,13 @@
 			dependencies = (
 			);
 			name = atm;
+			packageProductDependencies = (
+				552EE05D2A24D31F00589C7A /* ComposableArchitecture */,
+				552EE0602A24D33100589C7A /* SwiftUINavigation */,
+				552EE0622A24D33100589C7A /* _SwiftUINavigationState */,
+				552EE0692A250E0100589C7A /* FlowStacks */,
+				552EE06C2A25785800589C7A /* TCACoordinators */,
+			);
 			productName = atm;
 			productReference = 552EE02A2A24CC7E00589C7A /* atm.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +273,12 @@
 				Base,
 			);
 			mainGroup = 552EE0212A24CC7E00589C7A;
+			packageReferences = (
+				552EE05C2A24D31F00589C7A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				552EE05F2A24D33100589C7A /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				552EE0682A250E0100589C7A /* XCRemoteSwiftPackageReference "FlowStacks" */,
+				552EE06B2A25785800589C7A /* XCRemoteSwiftPackageReference "TCACoordinators" */,
+			);
 			productRefGroup = 552EE02B2A24CC7E00589C7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +321,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				552EE0302A24CC7E00589C7A /* ContentView.swift in Sources */,
-				552EE02E2A24CC7E00589C7A /* atmApp.swift in Sources */,
+				552EE0672A24E9EE00589C7A /* MainMenu.swift in Sources */,
+				556C1DED2A259F020028BD50 /* MainMenuChangePin.swift in Sources */,
+				552EE0592A24CC9300589C7A /* LoginView.swift in Sources */,
+				55D9B0152A25DB7A0025C099 /* Utils.swift in Sources */,
+				552EE0652A24E46B00589C7A /* AppModel.swift in Sources */,
+				55D9B0172A25E05A0025C099 /* MainMenuPayBillsSelected.swift in Sources */,
+				556C1DEF2A259F1D0028BD50 /* MainMenuPayBills.swift in Sources */,
+				552EE02E2A24CC7E00589C7A /* AtmApp.swift in Sources */,
+				556C1DF12A259F460028BD50 /* MainMenuDeposit.swift in Sources */,
+				552EE06F2A25786B00589C7A /* AppScreen.swift in Sources */,
+				55D9B0132A25CD080025C099 /* AlertError.swift in Sources */,
+				556C1DE92A259E900028BD50 /* MainMenuWithdraw.swift in Sources */,
+				556C1DE72A259E090028BD50 /* MainMenuBalanceInquiry.swift in Sources */,
+				556C1DEB2A259EBD0028BD50 /* MainMenuTransfer.swift in Sources */,
+				552EE0712A257B4B00589C7A /* AtmAppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +687,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		552EE05C2A24D31F00589C7A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.53.2;
+			};
+		};
+		552EE05F2A24D33100589C7A /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+		552EE0682A250E0100589C7A /* XCRemoteSwiftPackageReference "FlowStacks" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/FlowStacks.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+		552EE06B2A25785800589C7A /* XCRemoteSwiftPackageReference "TCACoordinators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/TCACoordinators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		552EE05D2A24D31F00589C7A /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552EE05C2A24D31F00589C7A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		552EE0602A24D33100589C7A /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552EE05F2A24D33100589C7A /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+		552EE0622A24D33100589C7A /* _SwiftUINavigationState */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552EE05F2A24D33100589C7A /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = _SwiftUINavigationState;
+		};
+		552EE0692A250E0100589C7A /* FlowStacks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552EE0682A250E0100589C7A /* XCRemoteSwiftPackageReference "FlowStacks" */;
+			productName = FlowStacks;
+		};
+		552EE06C2A25785800589C7A /* TCACoordinators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552EE06B2A25785800589C7A /* XCRemoteSwiftPackageReference "TCACoordinators" */;
+			productName = TCACoordinators;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 552EE0222A24CC7E00589C7A /* Project object */;
 }
