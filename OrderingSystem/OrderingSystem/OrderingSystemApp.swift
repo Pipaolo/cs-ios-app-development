@@ -6,13 +6,23 @@
 //
 import SwiftUI
 
-
 @main
 struct OrderingSystemApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
-          
+            OrderingSystemAppCoordinatorView(
+                store: .init(initialState: .initialState,
+                             reducer: OrderingSystemAppCoordinator())
+            )
         }
+    }
+}
+
+struct OrderingSystemApp_Previews: PreviewProvider {
+    static var previews: some View {
+        OrderingSystemAppCoordinatorView(
+            store: .init(initialState: .initialState,
+                         reducer: OrderingSystemAppCoordinator())
+        )
     }
 }
