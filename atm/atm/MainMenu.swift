@@ -5,17 +5,15 @@
 //  Created by Paolo Matthew on 5/29/23.
 //
 
-import SwiftUI
 import ComposableArchitecture
+import SwiftUI
 
-
-struct MainMenuModel : ReducerProtocol {
-    
+struct MainMenuModel: ReducerProtocol {
     struct State: Equatable {
-        var user: User = User()
+        var user: User = .init()
         var error: String = ""
     }
-    
+
     enum Action: Equatable {
         case loggedIn(User)
         case balanceRequested
@@ -26,13 +24,12 @@ struct MainMenuModel : ReducerProtocol {
         case depositRequested
         case exitRequested
         case errorShowed(String)
-        case pinChanged(String)
         case balanceDeducted(Double)
         case balanceAdded(Double)
     }
-    
+
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch(action){
+        switch action {
         case .loggedIn:
             return .none
         case .balanceRequested:
@@ -49,14 +46,6 @@ struct MainMenuModel : ReducerProtocol {
             return .none
         case .exitRequested:
             return .none
-        case .pinChanged(let newPin):
-            state.error = ""
-            if(newPin == state.user.pin){
-                state.error = "New pin cannot be the same as the old pin!"
-                return .none
-            }
-            state.user.pin = newPin
-            return .none
         case .balanceAdded(let amount):
             state.user.balance.amount += amount
             return .none
@@ -64,7 +53,7 @@ struct MainMenuModel : ReducerProtocol {
             return .none
         case .balanceDeducted(let amount):
             state.error = ""
-            if(amount > state.user.balance.amount){
+            if amount > state.user.balance.amount {
                 state.error = "Insufficient funds!"
                 return .none
             }
@@ -72,18 +61,17 @@ struct MainMenuModel : ReducerProtocol {
             return .none
         }
     }
-    
 }
 
 struct MainMenuView: View {
     let store: StoreOf<MainMenuModel>
-    
+
     var body: some View {
-        WithViewStore(store) {viewStore in
+        WithViewStore(store) { viewStore in
             VStack(alignment: .leading) {
                 Text("Welcome \(viewStore.user.name)!")
                     .font(.headline)
-        
+
                 List {
                     Button("Balance Inquiry") {
                         print("Balance!")
@@ -91,12 +79,11 @@ struct MainMenuView: View {
                     }
                     Button("Withdraw Cash") {
                         viewStore.send(.withdrawRequested)
-                        
                     }
                     Button("Transfer Money") {
                         viewStore.send(.transferRequested)
                     }
-                    Button("Change Pin") {
+                    Button("Change Password") {
                         viewStore.send(.changePinRequested)
                     }
                     Button("Pay Bills") {
@@ -107,7 +94,6 @@ struct MainMenuView: View {
                     }
                     Button("Exit") {
                         viewStore.send(.exitRequested)
-                        
                     }
                 }.cornerRadius(12)
             }
