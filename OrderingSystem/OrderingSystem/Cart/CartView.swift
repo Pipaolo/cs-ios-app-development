@@ -10,32 +10,86 @@ import SwiftUI
 
 struct CartView: View {
     let store: StoreOf<CartModel>
+
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             VStack {
-                Text("Cart")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                if viewStore.items.isEmpty {
+                    Text("Please add items to your cart")
+                        .fontWeight(.bold)
+                        .font(.system(size: 12))
+                        .padding(.all, 12)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                        .shadow(radius: 2)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.all, 12)
+                        .foregroundColor(.black)
+                        .font(.system(size: 12))
+                        .multilineTextAlignment(.center)
+                }
+
+                if !viewStore.items.isEmpty {
+                    VStack(alignment: .listRowSeparatorTrailing) {
+                        Button {
+                            viewStore.send(.clearCartRequested)
+                        } label: {
+                            Text("Clear Items")
+                        }
+
+                        .foregroundColor(Color.red)
+                    }
                     .padding(.horizontal)
-                List {
-                    ForEach(viewStore.cart.items) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.product.name)
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("\(item.product.price)")
-                                    .font(.callout)
-                                    .fontWeight(.bold)
-                            }
-                            Spacer()
-                            Stepper("\(item.quantity)", value: .constant(1))
+                    .frame(maxWidth: .infinity,
+                           alignment: .trailing)
+
+                    List {
+                        ForEachStore(self.store.scope(state: \.items, action: CartModel.Action.cartItem(id:action:))
+                        ) { cartItemStore in
+                            CartItemView(store: cartItemStore)
                         }
                     }
                 }
+
+                Spacer()
+                VStack {
+                    VStack(spacing: 12) {
+                        HStack {
+                            Text("Total Items:")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text("\(viewStore.state.totalItemCount())pcs")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                        }
+                        HStack {
+                            Text("Total:")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text("P\(viewStore.state.total(), specifier: "%.2f")")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                        }
+                    }
+                    Button {
+                        viewStore.send(.checkoutPressed)
+                    } label: {
+                        Text("Checkout")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                    }
+                    .disabled(viewStore.items.isEmpty)
+                    .buttonStyle(.borderedProminent)
+                }.padding(.all, 12)
             }
         }
+        .navigationTitle("Cart")
+        .confirmationDialog(self.store.scope(state: \.confirmationDialog, action: { $0 }), dismiss: .clearCartDismissed)
     }
 }
 

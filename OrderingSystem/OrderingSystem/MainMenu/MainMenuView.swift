@@ -16,20 +16,29 @@ struct MainMenuView: View {
             HStack(alignment: .top) {
                 VStack {
                     HStack {
-                        Text("\(viewStore.user.firstName)")
-                            .font(.headline)
+                        Text("RYL Eatery")
+                            .font(.title3)
                             .fontWeight(.bold)
                             .frame(
                                 maxWidth: .infinity, alignment: .leading
                             )
 
-                        Button {} label: {
-                            if viewStore.cart.cart.items.isEmpty {
-                                Text("Cart")
-                            } else {
-                                Text("Cart (\(viewStore.cart.cart.items.count))")
+                        Button {
+                            viewStore.send(.cartViewed)
+                        } label: {
+                            HStack {
+                                Image(systemName: "cart")
+                                if viewStore.cart.items.isEmpty {
+                                    Text("Cart")
+                                } else {
+                                    Text("Cart (\(viewStore.cart.items.count))")
+                                }
                             }
+                            .fontWeight(.bold)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 12)
                         }
+                        .buttonStyle(.bordered)
                     }.padding()
 
                     if viewStore.isLoading {
@@ -43,7 +52,9 @@ struct MainMenuView: View {
                         }
                     } else {
                         VStack(alignment: .leading) {
-                            Text("Please choose category: ").font(.callout)
+                            Text("Category")
+                                .fontWeight(.bold)
+                                .font(.title)
                             ScrollView {
                                 ForEach(viewStore.categories) { category in
                                     VStack(alignment: .leading) {
@@ -63,6 +74,12 @@ struct MainMenuView: View {
                                 }.padding(.all, 12)
                             }
                         }.padding(.all, 12)
+                    }
+                    Button {
+                        viewStore.send(.logoutPressed)
+                    } label: {
+                        Text("Logout")
+                            .foregroundColor(Color.red)
                     }
                 }
             }

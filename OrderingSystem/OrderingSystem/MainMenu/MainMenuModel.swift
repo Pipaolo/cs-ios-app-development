@@ -21,6 +21,8 @@ struct MainMenuModel: ReducerProtocol {
 
     enum Action: Equatable {
         case categoriesFetched
+        case cartViewed
+        case logoutPressed
         case categoriesLoaded([ProductCategory])
         case categorySelected(ProductCategory)
     }
@@ -41,6 +43,8 @@ struct MainMenuModel: ReducerProtocol {
             case .categoriesLoaded(let categories):
                 state.isLoading = false
                 state.categories = categories
+                return .none
+            default:
                 return .none
             }
         }

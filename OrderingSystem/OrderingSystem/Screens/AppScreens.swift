@@ -16,6 +16,8 @@ struct AppScreen: ReducerProtocol {
         case categoryDetail(CategoryDetailModel.State)
         case productAddToCart(ProductAddToCartModel.State)
         case cart(CartModel.State)
+        case checkout(CheckoutModel.State)
+        case checkoutSuccess(CheckoutSuccessModel.State)
 
         var id: ID {
             switch self {
@@ -29,6 +31,10 @@ struct AppScreen: ReducerProtocol {
                     return .productAddToCart
                 case .cart:
                     return .cart
+                case .checkout:
+                    return .checkout
+                case .checkoutSuccess:
+                    return .checkoutSuccess
             }
         }
 
@@ -38,6 +44,8 @@ struct AppScreen: ReducerProtocol {
             case categoryDetail
             case productAddToCart
             case cart
+            case checkout
+            case checkoutSuccess
 
             var id: ID {
                 self
@@ -51,6 +59,8 @@ struct AppScreen: ReducerProtocol {
         case categoryDetail(CategoryDetailModel.Action)
         case productAddToCart(ProductAddToCartModel.Action)
         case cart(CartModel.Action)
+        case checkout(CheckoutModel.Action)
+        case checkoutSuccess(CheckoutSuccessModel.Action)
     }
 
     var body: some ReducerProtocol<State, Action> {
@@ -76,6 +86,14 @@ struct AppScreen: ReducerProtocol {
 
         Scope(state: /State.cart, action: /Action.cart) {
             CartModel()
+        }
+
+        Scope(state: /State.checkout, action: /Action.checkout) {
+            CheckoutModel()
+        }
+
+        Scope(state: /State.checkoutSuccess, action: /Action.checkoutSuccess) {
+            CheckoutSuccessModel()
         }
     }
 }

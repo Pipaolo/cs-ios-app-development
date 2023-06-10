@@ -7,42 +7,76 @@
 
 import ComposableArchitecture
 import Foundation
-struct CartItem: Equatable, Identifiable {
-    var id: UUID = .init()
-    var product: Product = .init()
-    var quantity: Int = 1
-}
-
-struct Cart: Equatable {
-    var items: [CartItem] = []
-}
+import SwiftUI
 
 struct CartModel: ReducerProtocol {
     struct State: Equatable {
-        var cart: Cart = .init()
+        var items: IdentifiedArrayOf<CartItemModel.State> = []
+
+        var confirmationDialog: ConfirmationDialogState<Action>?
+
+        func total() -> Double {
+            items.reduce(0) { total, item in
+                total + item.product.price * Double(item.quantity)
+            }
+        }
+
+        func totalItemCount() -> Int {
+            items.reduce(0) { total, item in
+                total + item.quantity
+            }
+        }
     }
 
     enum Actions: Equatable {
-        case itemAdded(Product)
-        case itemRemoved(Product)
-        case itemQuantityChanged(Product, Int)
+        case cartItem(id: CartItemModel.State.ID, action: CartItemModel.Action)
+        case checkoutPressed
+        case clearCartRequested
+        case clearCartConfirmed
+        case clearCartDismissed
     }
 
     var body: some ReducerProtocol<State, Actions> {
         Reduce { state, action in
             switch action {
-            case .itemAdded(let product):
-                state.cart.items.append(.init(product: product))
+            case .clearCartConfirmed:
+                state.items = []
                 return .none
-            case .itemRemoved(let product):
-                state.cart.items.removeAll { $0.product == product }
+            case .clearCartDismissed:
+                state.confirmationDialog = nil
                 return .none
-            case .itemQuantityChanged(let product, let quantity):
-                if let index = state.cart.items.firstIndex(where: { $0.product == product }) {
-                    state.cart.items[index].quantity = quantity
+            case .clearCartRequested:
+                let items = state.items
+
+                state.confirmationDialog = ConfirmationDialogState {
+                    TextState("Clear Cart?")
+                } actions: {
+                    ButtonState(role: .cancel) {
+                        TextState("Cancel")
+                    }
+                    ButtonState(action: .clearCartConfirmed) {
+                        TextState("Confirm")
+                            .fontWeight(.bold)
+                    }
+
+                } message: {
+                    TextState("You are about to delete \(items.count) products in cart. \n Do you wish to continue?")
+                }
+
+                return .none
+            case .cartItem(let id, .binding(\.$quantity)):
+                guard var item = state.items[id: id] else {
+                    return .none
+                }
+                if item.quantity == 0 {
+                    state.items.remove(id: id)
                 }
                 return .none
+            default:
+                return .none
             }
+        }.forEach(\.items, action: /Action.cartItem(id:action:)) {
+            CartItemModel()
         }
     }
 }

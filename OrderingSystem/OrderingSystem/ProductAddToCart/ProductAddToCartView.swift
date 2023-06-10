@@ -13,11 +13,12 @@ struct ProductAddToCartView: View {
 
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
+
             VStack(alignment: .leading, spacing: 24) {
-                Text("Add To Cart")
-                    .font(.largeTitle)
+                Text("Add To Cart: \(viewStore.product.name)")
+                    .font(.title)
                     .fontWeight(.bold)
-                Spacer()
+
                 VStack(alignment: .leading) {
                     Text("Quantity").fontWeight(.bold)
                     TextField(text: viewStore.binding(\.$quantity)) {
@@ -48,10 +49,10 @@ struct ProductAddToCartView: View {
                             .frame(maxWidth: .infinity)
                     }.buttonStyle(.bordered)
                 }
-                Spacer()
             }
-            .navigationTitle("Add to cart")
-            .padding(.all, 12)
+            .padding(.all, 24)
+            .alert(self.store.scope(state: \.alert, action: { $0 }),
+                   dismiss: .alertDismissed)
         }
     }
 }

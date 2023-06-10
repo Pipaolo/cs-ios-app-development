@@ -20,6 +20,10 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
         )
         var productAddToCartState = ProductAddToCartModel.State()
         var cartState = CartModel.State()
+        var checkoutState = CheckoutModel.State(
+            cart: .init()
+        )
+        var checkoutSuccessState = CheckoutSuccessModel.State()
         
         var routeIDs: IdentifiedArrayOf<Route<AppScreen.State.ID>>
         var routes: IdentifiedArrayOf<Route<AppScreen.State>> {
@@ -37,6 +41,10 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                             return .productAddToCart(productAddToCartState)
                         case .cart:
                             return .cart(cartState)
+                        case .checkout:
+                            return .checkout(checkoutState)
+                        case .checkoutSuccess:
+                            return .checkoutSuccess(checkoutSuccessState)
                         }
                     }
                 }
@@ -65,6 +73,12 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                         case .cart(let cartState):
                             self.cartState = cartState
                             return .cart
+                        case .checkout(let checkoutState):
+                            self.checkoutState = checkoutState
+                            return .checkout
+                        case .checkoutSuccess(let checkoutSuccessState):
+                            self.checkoutSuccessState = checkoutSuccessState
+                            return .checkoutSuccess
                         }
                     }
                 }
@@ -93,18 +107,67 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                 state.categoryDetailState.category = category
                 state.routeIDs.push(.categoryDetail)
                 return .none
+            case .routeAction(_, action: .mainMenu(.logoutPressed)):
+                // Clear the cart
+                state.cartState = .init()
+                state.mainMenuState.cart = state.cartState
+                
+                // Navigate to the login screen
+                state.routeIDs = [.root(.login, embedInNavigationView: true)]
+                return .none
             case .routeAction(_, action: .categoryDetail(.productSelected(let product))):
                 state.productAddToCartState.product = product
-                state.routeIDs.presentSheet(.productAddToCart)
+                state.routeIDs.presentSheet(.productAddToCart, embedInNavigationView: true)
+                return .none
+            case .routeAction(_, action: .mainMenu(.cartViewed)):
+                state.routeIDs.push(.cart)
+                return .none
+            case .routeAction(_, action: .cart(.cartItem(_, action: .binding(\.$quantity)))):
+                state.mainMenuState.cart = state.cartState
+                return .none
+            case .routeAction(_, action: .cart(.checkoutPressed)):
+                state.checkoutState.cart = state.cartState
+                state.routeIDs.push(.checkout)
+                return .none
+            case .routeAction(_, action: .cart(.clearCartConfirmed)):
+                state.mainMenuState.cart = state.cartState
+                return .none
+            case .routeAction(_, action: .checkout(.orderPlaced)):
+                state.checkoutSuccessState = .init(
+                    items: state.checkoutState.cart.items,
+                    shippingMethod: state.checkoutState.shippingMethod,
+                    paymentMethod: state.checkoutState.payment.paymentMethod.description,
+                    total: state.cartState.total()
+                )
+                
+                state.checkoutSuccessState.generateOrderNumber()
+                
+                // Clear the cart
+                state.cartState.items = []
+                state.mainMenuState.cart = state.cartState
+                
+                state.routeIDs.goBackTo(where: { route in route.id == .mainMenu })
+                state.routeIDs.push(.checkoutSuccess)
+                return .none
+            case .routeAction(_, action: .checkoutSuccess(.orderAgainPressed)):
+                state.routeIDs.goBack(1)
+                return .none
+            case .routeAction(_, action: .productAddToCart(.alertDismissed)):
+                state.routeIDs.goBack(1)
+                return .none
+            case .routeAction(_, action: .productAddToCart(.cancelled)):
+                state.routeIDs.goBack(1)
                 return .none
             case .routeAction(_, action: .productAddToCart(.cartAdded(let cartItem))):
+          
                 // Add the cart item to the cart
-                state.cartState.cart.items.append(cartItem)
+                state.cartState.items.append(CartItemModel.State(id: cartItem.id,
+                                                                 product: cartItem.product,
+                                                                 quantity: cartItem.quantity)
+                )
                 
                 // Update the main menu state's cart
                 state.mainMenuState.cart = state.cartState
-            
-                state.routeIDs.goBack(1)
                 return .none
             default:
                 return .none
@@ -134,10 +197,20 @@ struct OrderingSystemAppCoordinatorView: View {
                 CaseLet(state: /AppScreen.State.categoryDetail,
                         action: AppScreen.Action.categoryDetail,
                         then: CategoryDetailView.init(store:))
-                
                 CaseLet(state: /AppScreen.State.productAddToCart,
                         action: AppScreen.Action.productAddToCart,
                         then: ProductAddToCartView.init(store:))
+                CaseLet(state: /AppScreen.State.cart,
+                        action: AppScreen.Action.cart,
+                        then: CartView.init(store:))
+                
+                CaseLet(state: /AppScreen.State.checkout,
+                        action: AppScreen.Action.checkout,
+                        then: CheckoutView.init(store:))
+                
+                CaseLet(state: /AppScreen.State.checkoutSuccess,
+                        action: AppScreen.Action.checkoutSuccess,
+                        then: CheckoutSuccessView.init(store:))
             }
         }
     }
