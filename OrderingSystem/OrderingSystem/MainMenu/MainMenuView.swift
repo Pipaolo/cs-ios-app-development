@@ -23,22 +23,6 @@ struct MainMenuView: View {
                                 maxWidth: .infinity, alignment: .leading
                             )
 
-                        Button {
-                            viewStore.send(.cartViewed)
-                        } label: {
-                            HStack {
-                                Image(systemName: "cart")
-                                if viewStore.cart.items.isEmpty {
-                                    Text("Cart")
-                                } else {
-                                    Text("Cart (\(viewStore.cart.items.count))")
-                                }
-                            }
-                            .fontWeight(.bold)
-                            .padding(.vertical, 6)
-                            .padding(.horizontal, 12)
-                        }
-                        .buttonStyle(.bordered)
                     }.padding()
 
                     if viewStore.isLoading {
@@ -81,6 +65,21 @@ struct MainMenuView: View {
                         Text("Logout")
                             .foregroundColor(Color.red)
                     }
+                }
+            }
+            .toolbar {
+                Button {
+                    viewStore.send(.cartViewed)
+                } label: {
+                    HStack {
+                        Image(systemName: "cart")
+                        if viewStore.cart.items.isEmpty {
+                            Text("Cart")
+                        } else {
+                            Text("Cart (\(viewStore.cart.items.count))")
+                        }
+                    }
+                    .fontWeight(.bold)
                 }
             }
             .navigationTitle("Main Menu")

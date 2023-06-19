@@ -195,7 +195,7 @@ class MainMenuItemCategoryView: View {
     public func render() {
         print("-----------------------------------")
         print("|                                 |")
-        print("|          Main Menu              |")
+        print("|          Main Menhou              |")
         print("|                                 |")
         print("-----------------------------------")
         print("Category: \(category.name)")
@@ -206,14 +206,14 @@ class MainMenuItemCategoryView: View {
         print("\(category.items.count + 1). Back")
         print("Select Item: ")
         let selectedIndex = Int(readLine() ?? "") ?? 0
-    
+        
         if (selectedIndex > category.items.count + 1) {
             print("Invalid Option")
             self.render()
             return
         }
 
-        // Check if the selected index is the exit option
+        // Check if the selected index is the exit opti on
         let shouldBack = selectedIndex == category.items.count + 1
         if (shouldBack) {
             MainMenuView(cart: cart).render()
