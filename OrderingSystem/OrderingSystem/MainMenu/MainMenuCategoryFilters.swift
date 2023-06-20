@@ -15,8 +15,8 @@ struct MainMenuCategoryFilters: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             VStack(alignment: .leading) {
                 Text("Category")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.title2)
+                    .fontWeight(.semibold)
                 if viewStore.isLoading {
                     HStack {
                         RoundedRectangularLoader()
@@ -47,17 +47,26 @@ struct MainMenuCategoryFilterItem: View {
     var onTapped: () -> Void = {}
     var body: some View {
         VStack(alignment: .center) {
-            AsyncImage(url: URL(string: category.imageUrl))
-                .aspectRatio(
-                    contentMode: .fill
-                ).frame(
-                    width: 80,
-                    height: 80,
-                    alignment: .center
-                )
-                .cornerRadius(12)
-                .shadow(radius: 2)
-                .clipShape(Circle())
+            AsyncImage(
+                url: URL(string: category.imageUrl),
+                content: {
+                    image in
+                    image
+                        .resizable()
+                        .frame(
+                            width: 80,
+                            height: 80,
+                            alignment: .center
+                        )
+                        .shadow(radius: 2)
+                        .clipShape(Circle())
+                },
+                placeholder: {}
+            )
+            .overlay(
+                Circle()
+                    .stroke(Color.purple, lineWidth: isSelected ? 4 : 0)
+            )
 
             Text(category.name).fontWeight(.bold)
                 .font(.system(size: 18))

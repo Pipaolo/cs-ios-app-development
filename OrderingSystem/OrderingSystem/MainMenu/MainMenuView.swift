@@ -15,16 +15,6 @@ struct MainMenuView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             HStack(alignment: .top) {
                 VStack {
-                    HStack {
-                        Text("RYL Eatery")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .frame(
-                                maxWidth: .infinity, alignment: .leading
-                            )
-
-                    }.padding()
-
                     if viewStore.isLoading {
                         VStack(spacing: 12) {
                             Spacer()
@@ -46,6 +36,9 @@ struct MainMenuView: View {
                     }
                 }
             }
+            .toolbarTitleMenu(content: {
+                Text("Main Menu")
+            })
             .toolbar {
                 Button {
                     viewStore.send(.cartViewed)
@@ -61,10 +54,11 @@ struct MainMenuView: View {
                     .fontWeight(.bold)
                 }
             }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Main Menu")
             .onAppear {
                 viewStore.send(.categoriesFetched)
             }
-            .navigationTitle("Main Menu")
         }
     }
 }

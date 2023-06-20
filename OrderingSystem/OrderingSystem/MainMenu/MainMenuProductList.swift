@@ -76,11 +76,18 @@ struct MainMenuProductItem: View {
 
             VStack(alignment: .center, spacing: 12) {
                 AsyncImage(
-                    url: URL(string: product.imageUrl)
+                    url: URL(string: product.imageUrl),
+                    content: { image in
+                        image
+                            .resizable()
+                            .frame(maxWidth: .infinity, maxHeight: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    },
+                    placeholder: {}
                 )
-                .frame(maxWidth: 100, maxHeight: 100)
-                .aspectRatio(contentMode: .fill)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+//                .frame(maxWidth: 150, maxHeight: 150)
+//                .clipped()
+//                .clipShape(RoundedRectangle(cornerRadius: 8))
 
                 VStack(alignment: .leading) {
                     Text(product.name)
