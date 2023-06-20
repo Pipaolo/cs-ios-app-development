@@ -34,6 +34,7 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                         case .login:
                             return .login(loginState)
                         case .mainMenu:
+                  
                             return .mainMenu(mainMenuState)
                         case .categoryDetail:
                             return .categoryDetail(categoryDetailState)
@@ -101,6 +102,7 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                     return .none
                 }
                 state.mainMenuState.user = state.loginState.user ?? .init()
+                
                 state.routeIDs = [.root(.mainMenu, embedInNavigationView: true)]
                 return .none
             case .routeAction(_, action: .mainMenu(.categorySelected(let category))):
@@ -120,6 +122,7 @@ struct OrderingSystemAppCoordinator: ReducerProtocol {
                 state.routeIDs.presentSheet(.productAddToCart, embedInNavigationView: true)
                 return .none
             case .routeAction(_, action: .mainMenu(.cartViewed)):
+                state.cartState = state.mainMenuState.cart
                 state.routeIDs.push(.cart)
                 return .none
             case .routeAction(_, action: .cart(.cartItem(_, action: .binding(\.$quantity)))):

@@ -10,6 +10,7 @@ import Foundation
 struct ProductCategory: Equatable, Identifiable {
     var id: UUID = .init()
     var name: String = "Sample"
+    var imageUrl: String = "https://via.placeholder.com/150"
     var products: [Product] = [
         .init(),
         .init(),
@@ -23,34 +24,42 @@ struct Product: Equatable, Identifiable {
     var id: UUID = .init()
     var name: String = "Sample Product"
     var price: Double = 100
+    var imageUrl: String = "https://via.placeholder.com/150"
     var category: String = "Sample"
 }
 
-class ProductsService {
-    let defaultCategories: [ProductCategory] = [
-        .init(name: "Burgers", products: [
-            .init(name: "Cheeseburger", price: 50),
-            .init(name: "Bacon Cheeseburger", price: 60),
-            .init(name: "Double Cheeseburger", price: 80),
-            .init(name: "Double Bacon Cheeseburger", price: 90),
-            .init(name: "Double Quarter Pounder", price: 100)
-        ]),
-        .init(name: "Fries", products: [
-            .init(name: "Regular Fries", price: 30),
-            .init(name: "Large Fries", price: 40),
-            .init(name: "Mega Fries", price: 50),
-            .init(name: "Ultra Mega Fries", price: 60),
-            .init(name: "Ultra Ultra Fries", price: 70)
-        ]),
-        .init(name: "Drinks", products: [
-            .init(name: "Regular Drink", price: 30),
-            .init(name: "Large Drink", price: 40),
-            .init(name: "Mega Drink", price: 50),
-            .init(name: "Ultra Mega Drink", price: 60),
-            .init(name: "Ultra Ultra Drink", price: 70)
-        ])
-    ]
+let defaultCategories: [ProductCategory] = [
+    .init(name: "Filo Dishes", products: [
+        .init(name: "Adobong Baboy", price: 50),
+        .init(name: "Sinigang na Manok", price: 60),
+        .init(name: "Dinakdakan", price: 80),
+        .init(name: "Pork Sisig", price: 90),
+        .init(name: "Bulalo", price: 100)
+    ]),
+    .init(name: "Desserts", products: [
+        .init(name: "Halo-Halo", price: 30),
+        .init(name: "Mais Con-Yelo", price: 40),
+        .init(name: "Ginataang Bilo-Bilo", price: 50),
+        .init(name: "Scramble", price: 60),
+        .init(name: "Lecheflan", price: 70)
+    ]),
+    .init(name: "Drinks", products: [
+        .init(name: "Coke(250ml)", price: 30),
+        .init(name: "Royal(250ml)", price: 40),
+        .init(name: "Sprite(250ml)", price: 50),
+        .init(name: "Mountain Dew(250ml)", price: 60),
+        .init(name: "Ryl Iced Tea(250ml)", price: 70)
+    ]),
+    .init(name: "Drinks (2)", products: [
+        .init(name: "Coke(250ml)", price: 30),
+        .init(name: "Royal(250ml)", price: 40),
+        .init(name: "Sprite(250ml)", price: 50),
+        .init(name: "Mountain Dew(250ml)", price: 60),
+        .init(name: "Ryl Iced Tea(250ml)", price: 70)
+    ])
+]
 
+class ProductsService {
     /**
         Fetches all categories of products along with their products
 

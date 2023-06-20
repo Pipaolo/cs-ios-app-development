@@ -9,7 +9,6 @@ struct AppScreenEnvironment {
 
 struct AppScreen: ReducerProtocol {
     let environment: AppScreenEnvironment
-
     enum State: Equatable, Identifiable {
         case login(LoginModel.State)
         case mainMenu(MainMenuModel.State)

@@ -49,12 +49,15 @@ struct CheckoutSuccessView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack(alignment: .leading, spacing: 12) {
+                Text("Ryl Incorporation").font(.title)
+                    .fontWeight(.bold)
                 Text("Order #: \(viewStore.orderNumber)")
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 Text("Receipt #: \(viewStore.receiptNumber)")
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
+
                 List {
                     ForEach(viewStore.items) { item in
                         HStack(alignment: .top) {

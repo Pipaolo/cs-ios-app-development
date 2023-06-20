@@ -35,29 +35,8 @@ struct MainMenuView: View {
                             Spacer()
                         }
                     } else {
-                        VStack(alignment: .leading) {
-                            Text("Category")
-                                .fontWeight(.bold)
-                                .font(.title)
-                            ScrollView {
-                                ForEach(viewStore.categories) { category in
-                                    VStack(alignment: .leading) {
-                                        Text(category.name).fontWeight(.bold)
-                                            .font(.system(size: 18))
-                                            .padding(.all, 12)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                    .background(Color.white)
-                                    .cornerRadius(12)
-                                    .shadow(radius: 2)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .onTapGesture {
-                                        viewStore.send(.categorySelected(category))
-                                    }
-
-                                }.padding(.all, 12)
-                            }
-                        }.padding(.all, 12)
+                        MainMenuCategoryFilters(store: store)
+                        MainMenuProductList(store: store)
                     }
                     Button {
                         viewStore.send(.logoutPressed)
@@ -82,10 +61,10 @@ struct MainMenuView: View {
                     .fontWeight(.bold)
                 }
             }
-            .navigationTitle("Main Menu")
             .onAppear {
                 viewStore.send(.categoriesFetched)
             }
+            .navigationTitle("Main Menu")
         }
     }
 }
