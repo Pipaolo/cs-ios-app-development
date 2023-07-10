@@ -26,7 +26,7 @@ struct LoginView: View {
                         .padding(.all, 12)
                         .overlay(
                             RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color.blue, lineWidth: 2)
+                                .stroke(Color.purple, lineWidth: 2)
                         )
                         .textInputAutocapitalization(.never)
 
@@ -40,24 +40,26 @@ struct LoginView: View {
                         Button(action: {
                             isPasswordHidden.toggle()
                         }) {
-                            Image(systemName: isPasswordHidden ? "eye.slash.fill" : "eye.fill")
+                            Image(systemName: isPasswordHidden ? "eye.slash.fill" : "eye.fill").foregroundColor(Color.purple)
                         }
                     }
                     .padding(.all, 12)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.blue, lineWidth: 2)
+                            .stroke(Color.purple, lineWidth: 2)
                     )
 
                     Button {
                         viewStore.send(.submitted)
                     } label: {
-                        Text("Login")
+                        Text("LOGIN")
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 8)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 12)
                             .padding(.horizontal, 12)
                     }
-                    .buttonStyle(.borderedProminent)
+                    .background(Color.purple)
+
                     .foregroundColor(.white)
                     .cornerRadius(10)
                 }

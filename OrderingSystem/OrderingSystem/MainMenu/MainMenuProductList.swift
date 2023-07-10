@@ -85,9 +85,6 @@ struct MainMenuProductItem: View {
                     },
                     placeholder: {}
                 )
-//                .frame(maxWidth: 150, maxHeight: 150)
-//                .clipped()
-//                .clipShape(RoundedRectangle(cornerRadius: 8))
 
                 VStack(alignment: .leading) {
                     Text(product.name)
@@ -109,6 +106,7 @@ struct MainMenuProductItem: View {
                         Text("Add to cart")
                             .padding(.horizontal, 24)
                             .padding(.vertical, 12)
+                            .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
                     }
                     .foregroundColor(.white)
@@ -131,9 +129,9 @@ struct MainMenuProductItem: View {
                         } label: {
                             Image(systemName: "minus")
 
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 50)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
+
                         .foregroundColor(.white)
                         .background(Color.purple)
                         .clipShape(
@@ -143,21 +141,25 @@ struct MainMenuProductItem: View {
                         Text("\(cartItem!.quantity)")
                             .font(.system(size: 14))
                             .foregroundColor(.black)
+                            .padding(.horizontal, 12)
 
                         Button {
                             viewStore.send(.quantityChanged(1))
                         } label: {
                             Image(systemName: "plus")
 
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 50)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
+
                         .foregroundColor(.white)
                         .background(Color.purple)
                         .clipShape(
                             RoundedRectangle(cornerRadius: 12)
                         )
                     }
+                    .frame(height: 44)
+                    .background(Color.purple.opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
             }
             .padding(.all, 12)

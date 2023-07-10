@@ -51,6 +51,7 @@ struct MainMenuView: View {
                             Text("Cart (\(viewStore.cart.items.count))")
                         }
                     }
+                    .foregroundColor(Color.purple)
                     .fontWeight(.bold)
                 }
             }
